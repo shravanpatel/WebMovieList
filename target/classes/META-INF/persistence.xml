@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="WebMovieList" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>model.Movie</class>
+		<class>model.MovieListDetails</class>
+		<class>model.Theater</class>
+		<class>controller.LocalDateAttributeConverter</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="admin"/>
+			<property name="javax.persistence.jdbc.password" value="cisaws175"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cugsiidbsm4m.us-east-1.rds.amazonaws.com/cis175"/>
+		</properties>
+	</persistence-unit>
+</persistence>

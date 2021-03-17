@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Application - View All Movies</title>
+<title>View All Movies</title>
 </head>
 <body>
 	<form action="navigationServlet" method="post">
@@ -16,15 +16,18 @@
 				<td><b>Director</b></td>
 				<td><b>Producer</b></td>
 				<td><b>Actors</b></td>
+				<td><b>Release Date</b></td>
+				
 			</tr>
-			<c:forEach items="${requestScope.allMovies}" var="currentmovie">
+			<c:forEach items="${requestScope.allMovies}" var="currentMovie">
 				<tr>
-					<td><input type="radio" name="id" value="${currentmovie.id}"></td>
-					<td>${currentmovie.title}</td>
-					<td>${currentmovie.genre}</td>
-					<td>${currentmovie.director}</td>
-					<td>${currentmovie.producer}</td>
-					<td>${currentmovie.actors}</td>
+					<td><input type="radio" name="id" value="${currentMovie.id}"></td>
+					<td>${currentMovie.title}</td>
+					<td>${currentMovie.genre}</td>
+					<td>${currentMovie.director}</td>
+					<td>${currentMovie.producer}</td>
+					<td>${currentMovie.actors}</td>
+					<td>${currentMovie.releaseDate}</td>
 				</tr>
 			</c:forEach>
 		</table>

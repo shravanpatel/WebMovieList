@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,11 +28,24 @@ public @Data class Movie {
 	private String producer;
 	@Column(name = "actors")
 	private String actors;
+	@Column(name = "release_date")
+	private LocalDate releaseDate;
 
 	public Movie() {
 		super();
 	}
 
+	public Movie(String title, String genre, String director, String producer, String actors,
+			LocalDate releaseDate) {
+		super();
+		this.title = title;
+		this.genre = genre;
+		this.director = director;
+		this.producer = producer;
+		this.actors = actors;
+		this.releaseDate = releaseDate;
+	}
+	
 	public Movie(String title, String genre, String director, String producer, String actors) {
 		super();
 		this.title = title;
@@ -40,6 +55,7 @@ public @Data class Movie {
 		this.actors = actors;
 	}
 
+	
 	public Movie(String title) {
 		super();
 		this.title = title;
@@ -48,4 +64,6 @@ public @Data class Movie {
 	public String returnMovieDetails() {
 		return title + ", directed by " + director + " starring " + actors;
 	}
+
+	
 }

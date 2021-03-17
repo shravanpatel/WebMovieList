@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,8 +36,10 @@ public class AddMovieServlet extends HttpServlet {
 		String director = request.getParameter("director");
 		String producer = request.getParameter("producer");
 		String actors = request.getParameter("actors");
+		String inputDateString = request.getParameter("dateReleased");
+		LocalDate releaseDate = LocalDate.parse(inputDateString);
 		
-		Movie movie = new Movie(title, genre, director, producer, actors);
+		Movie movie = new Movie(title, genre, director, producer, actors, releaseDate);
 		MovieHelper dao = new MovieHelper();
 		dao.insertMovie(movie);
 		

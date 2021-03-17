@@ -37,6 +37,7 @@ public class MovieHelper {
 
 	public List<Movie> showAllMovies() {
 		EntityManager em = emfactory.createEntityManager();
+		@SuppressWarnings("unchecked")
 		List<Movie> allItems = em.createQuery("SELECT i FROM Movie i").getResultList();
 		return allItems;
 	}

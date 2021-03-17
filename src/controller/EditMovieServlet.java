@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +38,8 @@ public class EditMovieServlet extends HttpServlet {
 		String director = request.getParameter("director");
 		String producer = request.getParameter("producer");
 		String actors = request.getParameter("actors");
+		LocalDate releaseDate = LocalDate.parse(request.getParameter("releaseDate"));
+		
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 				
 		Movie movieToUpdate = dao.searchForMovieById(tempId);
@@ -44,10 +48,11 @@ public class EditMovieServlet extends HttpServlet {
 		movieToUpdate.setDirector(director);
 		movieToUpdate.setProducer(producer);
 		movieToUpdate.setActors(actors);
+		movieToUpdate.setReleaseDate(releaseDate);
 				
 		dao.updateMovie(movieToUpdate);
 
-		getServletContext().getRequestDispatcher("/viewAllItemsServlet").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewAllMoviesServlet").forward(request, response);
 	}
 
 }

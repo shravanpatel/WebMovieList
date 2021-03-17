@@ -6,14 +6,27 @@
 </head>
 <body>
 	<form action="addMovieServlet" method="post">
-		<label for="title">Title: </label><input type="text" name="title" required /> <br /> 
-		<label for="genre">Genre: </label><input type="text" name="genre" required /> <br /> 
-		<label for="director">Director: </label><input type="text" name="director" required /> <br /> 
-		<label for="producer">Producer: </label><input type="text" name="producer" required /> <br /> 
-		<label for="producer">Actors: </label><input type="text" name="actors" required /> <br /> 
-		<input type="submit" value="Add Movie" />
+		<label for="title">Title: </label><input type="text" name="title"
+			required /> <br /> <label for="genre">Genre: </label><input
+			type="text" name="genre" required /> <br /> <label for="director">Director:</label><input
+			type="text" name="director" required /> <br /> <label
+			for="producer">Producer: </label><input type="text" name="producer"
+			required /> <br /> <label for="actors">Actors: </label><input
+			type="text" name="actors" required /> <br /> <label
+			for="dateReleased">Date Released: </label><input type="date"
+			name="dateReleased" placeholder="eg. yyyy-mm-dd" min="2020-12-01"
+			max="2021-12-31"> <br /> <input type="submit"
+			value="Add movie" />
 	</form>
 	<br />
-	<a href="viewAllMoviesServlet">View the complete movie list</a>
+	<button type="button" onclick="location.href='viewAllMoviesServlet';">
+		See all movies available</button>
+	<br />
+	<button type="button"
+		onclick="location.href='viewAllMovieListsServlet';">View all
+		movie lists</button>
+	<br />
+	<button type="button" onclick="location.href='addMoviesToListServlet';">
+		Create a new movie list</button>
 </body>
 </html>
